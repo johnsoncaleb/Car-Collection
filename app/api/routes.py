@@ -22,7 +22,7 @@ def create_vehicle(current_user_token):
     vehicle = Vehicle(model, make, year, style, user_token=user_token)
 
     db.session.add(vehicle)
-    db.session.commit
+    db.session.commit()
 
     response = vehicle_schema.dump(vehicle)
     return jsonify(response)
